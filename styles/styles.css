@@ -153,6 +153,8 @@ a {
   background-color: #034243;
 }
 .game__card, .game__card--gif {
+  position: relative;
+  transition: transform 1s;
   font-size: 2rem;
   width: 12rem;
   height: 14rem;
@@ -160,6 +162,8 @@ a {
   border: 1px solid black;
   border-radius: 0.25rem;
   margin: 2rem 0.5rem;
+  cursor: pointer;
+  transform-style: preserve-3d;
 }
 .game__search {
   border: none;
@@ -181,6 +185,10 @@ a {
   font-weight: 700;
   background-color: #e3a72f;
   color: #000000;
+}
+
+.game__card.active, .active.game__card--gif {
+  transform: perspective(300px) rotateX(180deg);
 }
 
 .footer {

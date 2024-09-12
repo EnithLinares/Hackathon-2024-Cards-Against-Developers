@@ -141,6 +141,8 @@
     }
 
     &__card {
+        position: relative;
+        transition: transform 1s;
         font-size: 2rem;
         width: 12rem;
         height: 14rem;
@@ -148,17 +150,12 @@
         border: 1px solid black;
         border-radius: 0.25rem;
         margin: 2rem 0.5rem;
+        cursor: pointer;
+        transform-style: preserve-3d;
 
         &--gif {
             @extend .game__card;
         }
-    }
-
-    &__search {
-        border: none;
-        border-radius: 4px;
-        height: 2.5rem;
-        width: 40vw;
     }
 
     &__button {
@@ -176,58 +173,5 @@
             background-color: $yellow;
             color: $black;
         }
-    }
-}
-
-.footer {
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: center;
-    background-color: $yellow;
-    padding: 1rem;
-
-    &__title {
-        font-size: 2.5rem;
-        text-align: center;
-        padding: 2rem 1rem;
-        color: $dark-red;
-    }
-}
-
-.dev {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    &__photo {
-        border-radius: 50%;
-        width: 7rem;
-        height:7rem;
-        margin: 0 1rem;
-    }
-
-    &__name{
-        font-size: 1.75rem;
-        padding: 0.5rem;
-        color: $dark-green;
-    }
-
-    &__role {
-        font-size: 1.5rem;
-    }
-
-    &__link {
-        font-size: 1.25rem;
-        padding: 0.5rem;
-        margin-bottom: 1.5rem;
-        color: $dark-red;
-
-        &:visited {
-            color: $dark-green;
-            font-weight: 700;
         }
     }
-
-
-}
