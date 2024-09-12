@@ -90,8 +90,53 @@
 
     &__list-item {
         font-size: 1.15rem;
+        font-weight: 600;
         padding: 2rem 0;
     }
 }
 
+.game  {
+    background-color: $light-green;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 
+    &__title {
+        font-size: 2.5rem;
+        color: $dark-red;
+        background-color: $light-yellow;
+        text-align: center;
+        width: 100vw;
+        padding: 3rem 2rem;
+    }
+
+    &__card {
+        font-size: 2rem;
+        width: 40vw;
+        height: 20vh;
+        background-color: bisque;
+        border: 1px solid black;
+        border-radius: 0.25rem;
+
+        &--gif {
+            @extend .game__card;
+        }
+    }
+
+    &__button {
+        border:none;
+        border-radius: 0.25rem;
+        padding: 0.5rem;
+        margin: 0.25rem;
+        height: 5vh;
+        width: 15vh;
+        color: white;
+        background-color: $dark-red;
+
+        &:hover{
+            font-weight: 700;
+            background-color: $yellow;
+            color: $black;
+        }
+        }
+    }
