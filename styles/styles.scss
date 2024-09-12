@@ -184,19 +184,38 @@
         position: relative;
         transition: transform 1s;
         font-size: 2rem;
-        width: 12rem;
-        height: 14rem;
-        background-color: whitesmoke;
+        width: 40vw;
+        height: 20vh;
+        background-color: bisque;
         border: 1px solid black;
         border-radius: 0.25rem;
-        margin: 3rem 2.5rem;
+        margin: 2rem 0.5rem;
         cursor: pointer;
         transform-style: preserve-3d;
-
+    
         &--gif {
             @extend .game__card;
         }
     }
+
+    &__card-front {
+        z-index: 1;
+        top: 0;
+        left: 0;
+        position: absolute;
+        backface-visibility: hidden;
+    }
+    &__card-back {
+        width:100%;
+        height:100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        backface-visibility: hidden;
+        transform: rotateX(180deg);
+    }
+        
+
 
     &__button {
         display: block;
@@ -214,6 +233,10 @@
             color: $black;
         }
     }
+}
+
+.game__card.active {
+    transform: perspective(300px) rotateX(180deg);
 }
 
 .footer {
