@@ -112,9 +112,11 @@
     }
 
     &__body {
-        width: 100vw;
+        font-size: 2rem;
         text-align: center;
-        padding: 3rem;
+        padding: 2rem 3rem;
+        color: $light-yellow;
+        background-color: $dark-green;
     }
 
     &__card {
@@ -124,6 +126,7 @@
         background-color: bisque;
         border: 1px solid black;
         border-radius: 0.25rem;
+        margin: 2rem 0.5rem;
 
         &--gif {
             @extend .game__card;

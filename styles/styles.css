@@ -122,9 +122,11 @@ ul {
   padding: 3rem 2rem;
 }
 .game__body {
-  width: 100vw;
+  font-size: 2rem;
   text-align: center;
-  padding: 3rem;
+  padding: 2rem 3rem;
+  color: #fffbe1;
+  background-color: #034243;
 }
 .game__card, .game__card--gif {
   font-size: 2rem;
@@ -133,6 +135,7 @@ ul {
   background-color: bisque;
   border: 1px solid black;
   border-radius: 0.25rem;
+  margin: 2rem 0.5rem;
 }
 .game__button {
   border: none;
