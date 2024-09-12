@@ -207,7 +207,7 @@ a {
 .game__card, .game__card--gif {
   position: relative;
   transition: transform 1s;
-  font-size: 2rem;
+  font-size: 0.8rem;
   width: 40vw;
   height: 20vh;
   background-color: bisque;

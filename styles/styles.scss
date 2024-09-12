@@ -1,293 +1,285 @@
-@use './partials/resets' as *;
-@use './partials/variables' as *;
+@use "./partials/resets" as *;
+@use "./partials/variables" as *;
 
+.nav {
+  background-color: $yellow;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 2rem 0;
 
-.nav{
-    background-color: $yellow;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding: 2rem 0;
+  @include tablet {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  &__logo {
+    font-size: 2.25rem;
+    text-align: center;
+    padding: 1rem 2rem;
+    color: $dark-green;
+    width: 100%;
 
     @include tablet {
-        flex-direction: row;
-        justify-content: flex-start;
-        align-items: center;
+      width: 50%;
+      font-size: 1.75rem;
+    }
+  }
+
+  &__button {
+    border: none;
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    margin: 0.25rem;
+    background-color: $light-yellow;
+
+    @include tablet {
+      font-size: 1rem;
     }
 
-
-    &__logo {
-        font-size: 2.25rem;
-        text-align: center;
-        padding: 1rem 2rem;
-        color: $dark-green;
-        width: 100%;
-
-        @include tablet {
-            width: 50%;
-            font-size: 1.75rem;
-        }
+    &--1 {
+      @extend .nav__button;
+      background-color: $dark-red;
+      color: white;
     }
 
-    &__button {
-        border:none;
-        border-radius: 0.25rem;
-        padding: 0.5rem;
-        margin: 0.25rem;
-        background-color: $light-yellow;
-
-        @include tablet{
-            font-size: 1rem;
-        }
-
-        &--1 {
-            @extend .nav__button;
-            background-color: $dark-red;
-            color: white;
-        }
-
-        &--2 {
-            @extend .nav__button;
-            background-color: $light-green;
-            color: white;
-        }
+    &--2 {
+      @extend .nav__button;
+      background-color: $light-green;
+      color: white;
     }
+  }
 }
 
 .hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 2rem;
+  background-color: $dark-green;
+
+  @include tablet {
+    padding: 6rem 4rem;
+  }
+
+  &__title {
+    font-size: 2.5rem;
+    color: whitesmoke;
+    text-align: center;
+    @include tablet {
+      font-size: 3rem;
+    }
+  }
+
+  &__tagline {
+    padding: 1.5rem;
+    font-size: 1.5rem;
+    text-align: center;
+    color: $light-yellow;
+    @include tablet {
+      font-size: 2rem;
+    }
+  }
+}
+
+.rules {
+  background-color: $light-green;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+
+  &__header {
+    padding: 1.5rem;
+    font-size: 2rem;
+    color: $dark-green;
+    background-color: $light-yellow;
+
+    @include tablet {
+      font-size: 2.5rem;
+    }
+  }
+
+  &__cards {
+    height: 40vh;
+    @include tablet {
+      height: 60vh;
+    }
+  }
+
+  &__body {
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+
+    @include tablet {
+      font-size: 2rem;
+      padding: 0 2rem;
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__list {
+    background-color: $yellow;
+  }
+
+  &__list-item {
+    font-size: 1.15rem;
+    font-weight: 600;
+    padding: 2rem 1rem;
+
+    @include tablet {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+.game {
+  background-color: $light-green;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  &__title {
+    font-size: 2.5rem;
+    color: $dark-red;
+    background-color: $light-yellow;
+    text-align: center;
+    width: 100vw;
+    padding: 3rem 2rem;
+
+    @include tablet {
+      padding: 5rem;
+      font-size: 3.25rem;
+    }
+  }
+
+  &__container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 4rem 2rem;
+    padding: 0 2rem;
+  }
+
+  &__body {
+    font-size: 2rem;
+    padding: 2rem;
+    width: 80vw;
+    text-align: center;
+    color: $light-yellow;
     background-color: $dark-green;
+  }
 
-    @include tablet {
-        padding: 6rem 4rem;
+  &__card {
+    position: relative;
+    transition: transform 1s;
+    // font-size: 2rem;
+    font-size: 0.8rem;
+    width: 40vw;
+    height: 20vh;
+    background-color: bisque;
+    border: 1px solid black;
+    border-radius: 0.25rem;
+    margin: 2rem 0.5rem;
+    cursor: pointer;
+    transform-style: preserve-3d;
+
+    &--gif {
+      @extend .game__card;
     }
+  }
 
-    &__title {
-        font-size: 2.5rem;
-        color:whitesmoke;
-        text-align: center;
-        @include tablet {
-            font-size: 3rem;
-        }
+  &__card-front {
+    z-index: 1;
+    top: 0;
+    left: 0;
+    position: absolute;
+    backface-visibility: hidden;
+  }
+  &__card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+    transform: rotateX(180deg);
+  }
+
+  &__button {
+    display: block;
+    border: none;
+    border-radius: 0.25rem;
+    margin: 0.25rem;
+    height: 5vh;
+    width: 20vh;
+    color: white;
+    background-color: $dark-red;
+
+    &:hover {
+      font-weight: 700;
+      background-color: $yellow;
+      color: $black;
     }
-
-
-    &__tagline{
-        padding: 1.5rem;
-        font-size: 1.5rem;
-        text-align: center;
-        color: $light-yellow;
-        @include tablet {
-            font-size: 2rem;
-        }
-    }
-}
-
-
-.rules {
-    background-color: $light-green;
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: center;
-    align-items: center;
-
-    &__header{
-        padding: 1.5rem;
-        font-size: 2rem;
-        color: $dark-green;
-        background-color: $light-yellow;
-
-        @include tablet {
-            font-size: 2.5rem;
-        }
-    }
-
-    &__cards {
-        height: 40vh;
-        @include tablet {
-            height: 60vh;
-        }
-    }
-
-    &__body {
-        text-align: center;
-        padding: 1.5rem;
-        font-size: 1.5rem;
-        margin-bottom: 1rem;
-
-        @include tablet {
-            font-size: 2rem;
-            padding: 0 2rem;
-            margin-bottom: 1rem;
-        }
-    }
-    
-    &__list {
-        background-color: $yellow;
-    }
-
-    &__list-item {
-        font-size: 1.15rem;
-        font-weight: 600;
-        padding: 2rem 1rem;
-
-        @include tablet {
-            font-size: 1.50rem;
-        }
-    }
-}
-
-.game  {
-    background-color: $light-green;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-
-    &__title {
-        font-size: 2.5rem;
-        color: $dark-red;
-        background-color: $light-yellow;
-        text-align: center;
-        width: 100vw;
-        padding: 3rem 2rem;
-
-        @include tablet {
-            padding: 5rem;
-            font-size: 3.25rem;
-        }
-    }
-
-    &__container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 0 2rem;
-    }
-
-    &__body {
-        font-size: 2rem;
-        padding: 2rem;
-        width: 80vw;
-        text-align: center;
-        color: $light-yellow;
-        background-color: $dark-green;
-
-    }
-
-    &__card {
-        position: relative;
-        transition: transform 1s;
-        font-size: 2rem;
-        width: 40vw;
-        height: 20vh;
-        background-color: bisque;
-        border: 1px solid black;
-        border-radius: 0.25rem;
-        margin: 2rem 0.5rem;
-        cursor: pointer;
-        transform-style: preserve-3d;
-    
-        &--gif {
-            @extend .game__card;
-        }
-    }
-
-    &__card-front {
-        z-index: 1;
-        top: 0;
-        left: 0;
-        position: absolute;
-        backface-visibility: hidden;
-    }
-    &__card-back {
-        width:100%;
-        height:100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        backface-visibility: hidden;
-        transform: rotateX(180deg);
-    }
-        
-
-
-    &__button {
-        display: block;
-        border:none;
-        border-radius: 0.25rem;;
-        margin: 0.25rem;
-        height: 5vh;
-        width: 20vh;
-        color: white;
-        background-color: $dark-red;
-
-        &:hover{
-            font-weight: 700;
-            background-color: $yellow;
-            color: $black;
-        }
-    }
+  }
 }
 
 .game__card.active {
-    transform: perspective(300px) rotateX(180deg);
+  transform: perspective(300px) rotateX(180deg);
 }
 
 .footer {
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: center;
-    background-color: $yellow;
-    padding: 1rem;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  background-color: $yellow;
+  padding: 1rem;
 
-    &__title {
-        font-size: 2.5rem;
-        text-align: center;
-        padding: 2rem 1rem;
-        color: $dark-red;
-    }
+  &__title {
+    font-size: 2.5rem;
+    text-align: center;
+    padding: 2rem 1rem;
+    color: $dark-red;
+  }
 }
 
 .dev {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
-    &__photo {
-        border-radius: 50%;
-        width: 7rem;
-        height:7rem;
-        margin: 0 1rem;
+  &__photo {
+    border-radius: 50%;
+    width: 7rem;
+    height: 7rem;
+    margin: 0 1rem;
+  }
+
+  &__name {
+    font-size: 1.75rem;
+    padding: 0.5rem;
+    color: $dark-green;
+  }
+
+  &__role {
+    font-size: 1.5rem;
+  }
+
+  &__link {
+    font-size: 1.25rem;
+    padding: 0.5rem;
+    margin-bottom: 1.5rem;
+    color: $dark-red;
+
+    &:visited {
+      color: $dark-green;
+      font-weight: 700;
     }
-
-    &__name{
-        font-size: 1.75rem;
-        padding: 0.5rem;
-        color: $dark-green;
-    }
-
-    &__role {
-        font-size: 1.5rem;
-    }
-
-    &__link {
-        font-size: 1.25rem;
-        padding: 0.5rem;
-        margin-bottom: 1.5rem;
-        color: $dark-red;
-
-        &:visited {
-            color: $dark-green;
-            font-weight: 700;
-        }
-    }
-
-
+  }
 }

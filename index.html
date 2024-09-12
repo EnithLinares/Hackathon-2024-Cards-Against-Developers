@@ -13,78 +13,117 @@
     <title>Dads Against Humanity</title>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="./scripts/script.js" defer></script>
-        <!-- <script
+    <!-- <script
         src="SECONDARY SCRIPT PATH IF NECESSARY"
         type="module"
         defer
         ></script> -->
-</head>
-<body>
+  </head>
+  <body>
     <header class="header">
-    <nav class="nav">
+      <nav class="nav">
         <h1 class="nav__logo">Cards Against Developers</h1>
-        <a href="#how-to-play"><button class="nav__button--1">How to play</button></a>
-        <a href="#dad-jokes"><button class="nav__button--2">Give me that dad joke</button></a>
-        <a href="#gifs"><button class="nav__button">Give me that gif</button></a>
-    </nav>
+        <a href="#how-to-play"
+          ><button class="nav__button--1">How to play</button></a
+        >
+        <a href="#dad-jokes"
+          ><button class="nav__button--2">Give me that dad joke</button></a
+        >
+        <a href="#gifs"
+          ><button class="nav__button">Give me that gif</button></a
+        >
+      </nav>
     </header>
 
     <main>
-        <section class="hero">
-            <h2 class="hero__title"> Welcome <br>to<br> 'Cards Against Developers'</h2>    
-            <p class="hero__tagline">The place where we use our technical skills to make us laugh</p>
-        </section>
-        <section class="rules" id="how-to-play">
-            <h2 class="rules__header">how to play</h2>
-            <img src="./assets/realistic-vector-icon-illustration-flying-blank-playing-cards-isolated-white-background.png" alt="flying blank stack of cards" class="rules__cards"> 
-            <p class="rules__body">If you had played 'Cards Against Humanity', you know how to play! <br>If you don't, grab your friends and let's play.</p>
-            <ul class="rules__list">
-                <li class="rules__list-item">Click the dad jokes card to generate a dad joke</li>
-                <li class="rules__list-item">Sigh in grief at said dad joke</li>
-                <li class="rules__list-item">Search for a gif and press the 'get gifs' button</li>
-                <li class="rules__list-item">Choose the funniest reaction gif to win</li>
-            </ul>
-        </section>
-        <section class="game">
-            <h2 class="game__title">Let's play!</h2>
-            <div class="game__container">
-                <p class="game__body"id="dad-jokes">Pick a Dad joke card</p>
-                <article class="game__card">
-                    <div class="game__card-front">
-                        Get your Joke!
-                    </div>
-    
-                    <div class="game__card-back">//joke from api goes here</div>
-                </article>
-                <p class="game__body"id="gifs">Pick your Gif Answer</p>
-                <article class="game__card--gif" >//gifs go here</article>
-                <input type="text" class="game__search"placeholder="Search for your Gif">
-                <button onclick="fetchGifs()" class="game__button">get gif</button>
-            </div>
-        </section>
+      <section class="hero">
+        <h2 class="hero__title">
+          Welcome <br />to<br />
+          'Cards Against Developers'
+        </h2>
+        <p class="hero__tagline">
+          The place where we use our technical skills to make us laugh
+        </p>
+      </section>
+      <section class="rules" id="how-to-play">
+        <h2 class="rules__header">how to play</h2>
+        <img
+          src="./assets/realistic-vector-icon-illustration-flying-blank-playing-cards-isolated-white-background.png"
+          alt="flying blank stack of cards"
+          class="rules__cards"
+        />
+        <p class="rules__body">
+          If you had played 'Cards Against Humanity', you know how to play!
+          <br />If you don't, grab your friends and let's play.
+        </p>
+        <ul class="rules__list">
+          <li class="rules__list-item">
+            Click the dad jokes card to generate a dad joke
+          </li>
+          <li class="rules__list-item">Sigh in grief at said dad joke</li>
+          <li class="rules__list-item">
+            Search for a gif and press the 'get gifs' button
+          </li>
+          <li class="rules__list-item">
+            Choose the funniest reaction gif to win
+          </li>
+        </ul>
+      </section>
+      <section class="game">
+        <h2 class="game__title">Let's play!</h2>
+        <div class="game__container">
+          <p class="game__body" id="dad-jokes">Pick a Dad joke card</p>
+          <article class="game__card">
+            <div class="game__card-front">Get your Joke!</div>
 
+            <div class="game__card-back">//joke from api goes here</div>
+          </article>
+          <p class="game__body" id="gifs">Pick your Gif Answer</p>
+          <article id="gif-container" class="game__card--gif">
+            //gifs go here
+          </article>
+          <form class="game__form">
+            <input
+              type="text"
+              class="game__search"
+              name="gifSearch"
+              placeholder="Search for your Gif"
+            />
+            <button type="submit" class="game__button">get gif</button>
+          </form>
+        </div>
+      </section>
     </main>
 
     <footer class="footer">
-        <h3 class="footer__title">Meet the Developers</h3>
-        <article class="dev">
-            <img src=".//assets/Isabela-Palmerio_LI.jpg" class="dev__photo">
-            <h4 class="dev__name">Isabela Palmerio</h4>
-            <p class="dev__role">Mastermind and File Structure</p>
-            <a href="https://github.com/belpalmerio" class="dev__link">GitHub:/belpalmerio<p class="dev__github"></p></a>
-        </article>
-        <article class="dev">
-            <img src=".//assets/Sharan-Athiyadath_LI.jpg" class="dev__photo">
-            <h4 class="dev__name">Sharan Athiyadath</h4>
-            <p class="dev__role">JavaScript and Functionality</p>
-            <a href="https://github.com/Sharanadhi" class="dev__link">GitHub:/Sharanadhi<p class="dev__github"></p></a>
-        </article>
-        <article class="dev">
-            <img src=".//assets/Enith_Linares_LI.jpg" class="dev__photo">
-            <h4 class="dev__name">Nini Linares</h4>
-            <p class="dev__role">Styles</p>
-            <a href="https://github.com/EnithLinares" class="dev__link">GitHub:/EnithLinares<p class="dev__github"></p></a>
-        </article>
+      <h3 class="footer__title">Meet the Developers</h3>
+      <article class="dev">
+        <img src=".//assets/Isabela-Palmerio_LI.jpg" class="dev__photo" />
+        <h4 class="dev__name">Isabela Palmerio</h4>
+        <p class="dev__role">Mastermind and File Structure</p>
+        <a href="https://github.com/belpalmerio" class="dev__link"
+          >GitHub:/belpalmerio
+          <p class="dev__github"></p
+        ></a>
+      </article>
+      <article class="dev">
+        <img src=".//assets/Sharan-Athiyadath_LI.jpg" class="dev__photo" />
+        <h4 class="dev__name">Sharan Athiyadath</h4>
+        <p class="dev__role">JavaScript and Functionality</p>
+        <a href="https://github.com/Sharanadhi" class="dev__link"
+          >GitHub:/Sharanadhi
+          <p class="dev__github"></p
+        ></a>
+      </article>
+      <article class="dev">
+        <img src=".//assets/Enith_Linares_LI.jpg" class="dev__photo" />
+        <h4 class="dev__name">Nini Linares</h4>
+        <p class="dev__role">Styles</p>
+        <a href="https://github.com/EnithLinares" class="dev__link"
+          >GitHub:/EnithLinares
+          <p class="dev__github"></p
+        ></a>
+      </article>
     </footer>
-</body>
+  </body>
 </html>
