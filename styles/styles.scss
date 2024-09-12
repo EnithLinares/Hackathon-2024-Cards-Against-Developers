@@ -181,6 +181,8 @@
     }
 
     &__card {
+        position: relative;
+        transition: transform 1s;
         font-size: 2rem;
         width: 12rem;
         height: 14rem;
@@ -188,18 +190,12 @@
         border: 1px solid black;
         border-radius: 0.25rem;
         margin: 3rem 2.5rem;
+        cursor: pointer;
+        transform-style: preserve-3d;
 
         &--gif {
             @extend .game__card;
         }
-    }
-
-    &__search {
-        border: none;
-        border-radius: 4px;
-        height: 2.5rem;
-        width: 60vw;
-        margin-bottom: 1rem;
     }
 
     &__button {
@@ -219,7 +215,6 @@
         }
     }
 }
-
 
 .footer {
     display: flex;

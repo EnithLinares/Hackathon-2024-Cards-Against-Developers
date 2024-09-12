@@ -205,6 +205,8 @@ a {
   background-color: #034243;
 }
 .game__card, .game__card--gif {
+  position: relative;
+  transition: transform 1s;
   font-size: 2rem;
   width: 12rem;
   height: 14rem;
@@ -212,13 +214,8 @@ a {
   border: 1px solid black;
   border-radius: 0.25rem;
   margin: 3rem 2.5rem;
-}
-.game__search {
-  border: none;
-  border-radius: 4px;
-  height: 2.5rem;
-  width: 60vw;
-  margin-bottom: 1rem;
+  cursor: pointer;
+  transform-style: preserve-3d;
 }
 .game__button {
   display: block;
