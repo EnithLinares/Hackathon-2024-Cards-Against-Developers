@@ -1,7 +1,15 @@
-//fonts 
-$breakpoint1: 480px;
-@mixin big-phone {
+//media queries 
+$breakpoint1: 768px;
+@mixin tablet {
     @media (min-width: $breakpoint1) {
+        @content
+    }
+}
+
+$breakpoint2: 1024px;
+
+@mixin desktop {
+    @media (min-width: $breakpoint2) {
         @content
     }
 }
