@@ -1,63 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="./styles/styles.css" /> 
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="./styles/styles.css" />
     <title>Dads Against Humanity</title>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> 
-    <script src="INSERT SCRIPT PATH HERE" defer></script> 
-    <script src="SECONDARY SCRIPT PATH IF NECESSARY" type="module"
-    defer></script> 
-</head>
-<body>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./scripts/script.js" defer></script>
+    <!-- <script
+      src="SECONDARY SCRIPT PATH IF NECESSARY"
+      type="module"
+      defer
+    ></script> -->
+  </head>
+  <body>
     <header class="header">
-        <nav class="nav">
-            <h1 class="nav__logo">Cards Against Developers</h1>
-            <a><button class="nav__button--1">How to play</button></a>
-            <a><button class="nav__button--2">Give me that dad joke</button></a>
-            <a><button class="nav__button">Give me that gif</button></a>
-        </nav>
+      <nav class="nav">
+        <h1 class="nav__logo">Cards Against Developers</h1>
+        <a><button class="nav__button--1">How to play</button></a>
+        <a><button class="nav__button--2">Give me that dad joke</button></a>
+        <a><button class="nav__button">Give me that gif</button></a>
+      </nav>
     </header>
 
     <main>
-        <section class="hero">
-            <h2 class="hero__title"> Welcome <br>to<br> 'Cards Against Developers'</h2>    
-            <p class="hero__tagline">The place where we use our technical skills to make us laugh</p>
-        </section>
-        <section class="rules">
-            <h2 class="rules__header">how to play</h2>
-            <img src="./assets/realistic-vector-icon-illustration-flying-blank-playing-cards-isolated-white-background.png" alt="flying blank stack of cards" class="rules__cards"> 
-            <p class="rules__body">If you had played 'Cards Against Humanity', you know how to play! <br>If you don't, grab your friends and let's play.</p>
-            <ul class="rules__list">
-                <li class="rules__list-item">Click the dad jokes card to generate a dad joke</li>
-                <li class="rules__list-item">Sigh in grief at said dad joke</li>
-                <li class="rules__list-item">Generate four random gifs with the 'get gifs' button</li>
-                <li class="rules__list-item">Choose the funniest reaction gif to win</li>
-            </ul>
-        </section>
-        <section class="game">
-            <h2 class="game__title">let's play!</h2>
-            <p>Pick a Dad joke card</p>
-            <article class="game__card--dad">//dad joke goes here</article>
-            <button class="game__button">get gifs</button>
-            <p class="game__body">Pick your Gif Answer</p>
+      <section class="hero">
+        <h2 class="hero__title">
+          Welcome <br />to<br />
+          'Cards Against Developers'
+        </h2>
+        <p class="hero__tagline">
+          The place where we use our technical skills to make us laugh
+        </p>
+      </section>
+      <section class="rules">
+        <h2 class="rules__header">how to play</h2>
+        <img
+          src="./assets/realistic-vector-icon-illustration-flying-blank-playing-cards-isolated-white-background.png"
+          alt="flying blank stack of cards"
+          class="rules__cards"
+        />
+        <p class="rules__body">
+          If you had played 'Cards Against Humanity', you know how to play!
+          <br />If you don't, grab your friends and let's play.
+        </p>
+        <ul class="rules__list">
+          <li class="rules__list-item">
+            Click the dad jokes card to generate a dad joke
+          </li>
+          <li class="rules__list-item">Sigh in grief at said dad joke</li>
+          <li class="rules__list-item">
+            Generate four random gifs with the 'get gifs' button
+          </li>
+          <li class="rules__list-item">
+            Choose the funniest reaction gif to win
+          </li>
+        </ul>
+      </section>
+      <section class="game">
+        <h2 class="game__title">let's play!</h2>
+        <p>Pick a Dad joke card</p>
+        <article class="game__card--dad">//dad joke goes here</article>
+        <button onclick="getJokes()" class="game__button">get jokes</button>
+        <p class="game__body">Pick your Gif Answer</p>
 
-        <article class="game__card--gif">//gifs go here</article>
-        <article class="game__card--gif">//gifs go here</article>
-        <article class="game__card--gif">//gifs go here</article>
-        <article class="game__card--gif">//gifs go here</article>
-
-        <button class="game__button">get gifs</button>
+        <section id="gif-container">
+          <article class="game__card--gif">//gifs go here</article>
+          <article class="game__card--gif">//gifs go here</article>
+          <article class="game__card--gif">//gifs go here</article>
+          <article class="game__card--gif">//gifs go here</article>
         </section>
+
+        <button onclick="fetchGifs()" class="game__button">get gifs</button>
+      </section>
     </main>
 
-    <footer>
-
-    </footer>
-    
-</body>
+    <footer></footer>
+  </body>
 </html>
