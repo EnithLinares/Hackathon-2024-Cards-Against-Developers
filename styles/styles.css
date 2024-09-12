@@ -28,6 +28,10 @@ ul {
   list-style-type: circle;
 }
 
+a {
+  text-decoration: none;
+}
+
 .nav {
   background-color: #e3a72f;
   display: flex;
@@ -37,8 +41,15 @@ ul {
 }
 .nav__logo {
   font-size: 2.25rem;
-  padding: 1rem 0.5rem;
+  text-align: center;
+  padding: 1rem 2rem;
   color: #034243;
+  width: 100%;
+}
+@media (min-width: 480px) {
+  .nav__logo {
+    padding: 1rem 3rem;
+  }
 }
 .nav__button, .nav__button--2, .nav__button--1 {
   border: none;
@@ -79,7 +90,7 @@ ul {
 .rules {
   background-color: #36a2a3;
   display: flex;
-  flex-wrap: wrap;
+  flex-flow: column wrap;
   justify-content: center;
   align-items: center;
 }
@@ -103,7 +114,7 @@ ul {
 .rules__list-item {
   font-size: 1.15rem;
   font-weight: 600;
-  padding: 2rem 0;
+  padding: 2rem 1rem;
 }
 
 .game {
@@ -112,6 +123,7 @@ ul {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  padding-bottom: 3rem;
 }
 .game__title {
   font-size: 2.5rem;
@@ -131,11 +143,18 @@ ul {
 .game__card, .game__card--gif {
   font-size: 2rem;
   width: 40vw;
-  height: 20vh;
-  background-color: bisque;
+  height: 25vh;
+  background-color: whitesmoke;
   border: 1px solid black;
   border-radius: 0.25rem;
   margin: 2rem 0.5rem;
+}
+.game__search {
+  border: none;
+  border-radius: 4px;
+  height: 2.5rem;
+  margin: 0 1rem;
+  width: 40vw;
 }
 .game__button {
   border: none;
@@ -151,4 +170,49 @@ ul {
   font-weight: 700;
   background-color: #e3a72f;
   color: #000000;
+}
+
+.footer {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  background-color: #e3a72f;
+  padding: 1rem;
+}
+.footer__title {
+  font-size: 2.5rem;
+  text-align: center;
+  padding: 2rem 1rem;
+  color: #992800;
+}
+
+.dev {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.dev__photo {
+  border-radius: 50%;
+  width: 7rem;
+  height: 7rem;
+  margin: 0 1rem;
+}
+.dev__name {
+  font-size: 1.75rem;
+  padding: 0.5rem;
+  color: #034243;
+}
+.dev__role {
+  font-size: 1.5rem;
+}
+.dev__link {
+  font-size: 1.25rem;
+  padding: 0.5rem;
+  margin-bottom: 1.5rem;
+  color: #992800;
+}
+.dev__link:visited {
+  color: #034243;
+  font-weight: 700;
 }/*# sourceMappingURL=styles.css.map */

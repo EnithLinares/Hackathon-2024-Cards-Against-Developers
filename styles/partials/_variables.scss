@@ -1,6 +1,10 @@
 //fonts 
-
-
+$breakpoint1: 480px;
+@mixin big-phone {
+    @media (min-width: $breakpoint1) {
+        @content
+    }
+}
 
 
 
