@@ -110,6 +110,7 @@ ul {
   background-color: #36a2a3;
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
 }
 .game__title {
@@ -119,6 +120,11 @@ ul {
   text-align: center;
   width: 100vw;
   padding: 3rem 2rem;
+}
+.game__body {
+  width: 100vw;
+  text-align: center;
+  padding: 3rem;
 }
 .game__card, .game__card--gif {
   font-size: 2rem;
